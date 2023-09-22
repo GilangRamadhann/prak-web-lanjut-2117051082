@@ -20,29 +20,39 @@
     <P>Alamat : Labuhan Ratu</P>-->
 
 <div class="d-flex justify-content-center align-items-center flex-column" style="height:100vh;width:100%;">
-  <div class="border border-3 rounded" style="padding: 20px;">
-      <h2>Biodata Diri</h2>
+  <div class="rounded" style="padding: 20px; border:5px solid red;">
+    <h2>Biodata Diri</h2>
 <img src="https://avatars.githubusercontent.com/u/92220215?s=400&u=d8b69adfa8f2c9e7dbd9095049fa51834095d196&v=4" class="rounded-circle mx-auto d-block py-3" alt="..." width="160" height="190">
   <table class="mx-auto">
     <tr>
       <td>
-        <button type="button" class="btn btn-danger" style="width: 320px"><?= $nama
+        <button type="button" class="btn btn-success" style="width: 320px"><?= $nama
          ?></button>
       </td>
     </tr>
     <tr>
       <td>
-        <button type="button" class="btn btn-danger" style="width: 320px"><?= $npm ?></button>
+        <button type="button" class="btn btn-success" style="width: 320px"><?= $npm ?></button>
       </td>
     </tr>
     <tr>
       <td>
-      <button type="button" class="btn btn-danger" style="width: 320px"><?= $kelas ?></button>
+      <button type="button" class="btn btn-success" style="width: 320px"><?= $kelas ?></button>
       </td>
     </tr>
     <tr>
       <td>
-      <button type="button" class="btn btn-danger" style="width: 320px"><?= $alamat ?></button>
+      <button type="button" class="btn btn-success" style="width: 320px"><?= $jurusan ?></button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <button type="button" class="btn btn-success" style="width: 320px"><?= $angkatan ?></button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <button type="button" class="btn btn-success" style="width: 320px"><?= $alamat ?></button>
       </td>
     </tr>
   </table>
