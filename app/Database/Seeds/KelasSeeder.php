@@ -10,16 +10,16 @@ class KelasSeeder extends Seeder
     {
         $kelas_model = new KelasModel();
         $kelas_model->save([
-            'nama_kelas' => 'A',
+            'nama_kelas' => 'A'
         ]);
         $kelas_model->save([
-            'nama_kelas' => 'B',
+            'nama_kelas' => 'B'
         ]);
         $kelas_model->save([
-            'nama_kelas' => 'C',
+            'nama_kelas' => 'C'
         ]);
         $kelas_model->save([
-            'nama_kelas' => 'D',
+            'nama_kelas' => 'D'
         ]);
     }
 }
