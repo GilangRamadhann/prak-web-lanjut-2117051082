@@ -15,12 +15,24 @@
          <tr>
              <td>Nama</td>
              <td>:</td>
-             <td><input type="text" name="nama"></td>
+             <td><input type="text" class="form-control mt-2 <?= session('validation') && session('validation')->hasError('nama') ? 'is-invalid' : '' ?>" id="floatingName" placeholder="Nama" name="nama" value="<?= old('nama') ?>">
+             <?php if (session('validation') && session('validation')->hasError('nama')) : ?>
+                <div class="invalid-feedback">
+                     <?= session('validation')->getError('nama'); ?>
+                </div>
+            <?php endif; ?>
+            </td> 
          </tr>
          <tr>
              <td>NPM</td>
              <td>:</td>
-             <td><input type="text" name="npm"></td>
+             <td><input type="number" class="form-control mt-2 <?= session('validation') ? 'is-invalid' : '' ?>" id="floatingNpm" placeholder="NPM" name="npm" value="<?= old('npm') ?>">
+             <?php if (session('validation') && session('validation')->hasError('npm')) : ?>
+                <div class="invalid-feedback">
+                    <?= session('validation')->getError('npm'); ?>
+                </div>
+            <?php endif; ?>
+            </td>
          </tr>
          <tr>
             <td>Kelas</td>
