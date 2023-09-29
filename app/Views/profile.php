@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -11,9 +11,11 @@
       text-align: center;
     }
   </style>
-</head>
+</head> -->
 
-<body>
+<!-- <body> -->
+    <?= $this->extend('layouts/app')?>
+    <?= $this->section('content')?>
     <!-- <p>Nama: Gilang Ramadhan</p>
     <p>Kelas: CD</p>
     <p>NPM: 2117051082</p> 
@@ -46,6 +48,8 @@
       </td>
     </tr>
   </table>
-</body>
 
-</html>
+  <?=$this->endSection()?>
+<!-- </body>
+
+</html> -->
