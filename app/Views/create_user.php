@@ -10,7 +10,8 @@
     <?= $this->extend('layouts/app')?>
     <?= $this->section('content')?>
 
-    <form action="<?=base_url('user/store')?>" method="post">
+    <form method="POST" action="<?= base_url('/user/store') ?>" enctype="multipart/form-data">
+
     <div class="d-flex justify-content-center align-items-center flex-column" style="height:100vh;width:100%;">
     <div class="rounded" style="padding: 20px; border:5px solid green;">
       <h2>Form Biodata Diri</h2>
@@ -48,7 +49,12 @@
                 </select>
             </td>
         </tr>
-         <tr>
+        <tr>
+            <td>Foto</td>
+            <td>:</td>
+            <td><input type="file" name="foto"></td>
+        </tr>
+         <!-- <tr>
              <td>Jurusan</td>
              <td>:</td>
              <td><input type="text" name="jurusan"></td>
@@ -62,7 +68,7 @@
              <td>Alamat</td>
              <td>:</td>
              <td><input type="text" name="alamat"></td>
-         </tr>
+         </tr> -->
          <tr>
              <td><input type="submit" value="Simpan"></td>
          </tr>

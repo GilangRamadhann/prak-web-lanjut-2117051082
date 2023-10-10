@@ -2,7 +2,8 @@
 <?= $this->extend('layouts/app')?>
 <?= $this->section('content')?>
     <!-- Ini halaman list user -->
-    
+
+<a href="<?= base_url('user/create')?>">Tambah data</a>    
     <div class="container">
     <div class="row">
     <h3 class="mt-5">Tabel List User :</h3>
@@ -27,7 +28,7 @@
                     <td><?= $user['nama_kelas'] ?></td>
 
                     <td>
-                        <a class="btn btn-primary" href="">Detail</a>
+                        <a href="<?= base_url('user/profile/' . $user['id']) ?>" class="btn btn-primary">Detail</a>
                         <a class="btn btn-warning" href="">Edit</a>
                         <a class="btn btn-danger" href="">Hapus</a>
                     </td>
