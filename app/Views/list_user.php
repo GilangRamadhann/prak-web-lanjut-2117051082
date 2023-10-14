@@ -3,7 +3,7 @@
 <?= $this->section('content')?>
     <!-- Ini halaman list user -->
 
-<a href="<?= base_url('user/create')?>">Tambah data</a>    
+<a href="<?= base_url('user/create')?>" class="btn btn-primary">Tambah data</a>    
     <div class="container">
     <div class="row">
     <h3 class="mt-5">Tabel List User :</h3>
@@ -29,8 +29,12 @@
 
                     <td>
                         <a href="<?= base_url('user/profile/' . $user['id']) ?>" class="btn btn-primary">Detail</a>
-                        <a class="btn btn-warning" href="">Edit</a>
-                        <a class="btn btn-danger" href="">Hapus</a>
+                        <a href="<?= base_url('user/' . $user['id'] . '/edit') ?>" class="btn btn-warning">Edit</a>
+                        <form action="<?=base_url('user/' . $user['id'])?>" method="POST">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <?= csrf_field() ?>
+                            <input type="submit" class="btn btn-danger" value="Delete" style="width: 80px; height: 40px;">
+                        </form>
                     </td>
                 </tr>
             <?php
