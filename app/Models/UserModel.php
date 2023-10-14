@@ -54,3 +54,4 @@ class UserModel extends Model
             ->join('kelas', 'kelas.id=user.id_kelas')->findAll();
     }
 }
+

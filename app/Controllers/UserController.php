@@ -4,27 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\UserModel;
-use App\Models\KelasModel;
 
-class UserController extends BaseController
-{
-    public $userModel;
-    public $kelasModel;
-
-    public function __construct()
-    {
-        $this->userModel = new UserModel();
-        $this->kelasModel = new KelasModel();
-    }
-
-    public function index()
-    {
-        $user = $this->userModel->getUser();
-        $data = [
-            'users' => $user,
-            'title' => 'List User'
-        ];
-        return view('list_user', $data);
     }
     public function profile($nama = "", $kelas = "", $npm = "")
     {
@@ -40,6 +20,7 @@ class UserController extends BaseController
     }
     public function create()
     {
+upload-file
         // $kelas = [
         //     [
         //         'id' => 1,
@@ -74,6 +55,7 @@ class UserController extends BaseController
     }
 
     public function store(){
+
         if (!$this->validate([
             'nama' => [
                 'rules' => 'required',
@@ -93,6 +75,7 @@ class UserController extends BaseController
             return redirect()->to(base_url('/user/create'))->withInput()->with('validation', $validation);
         }
 
+
         $path = 'assets/uploads/img/';
         $foto = $this->request->getFile('foto');
         $name = $foto->getRandomName();
@@ -102,6 +85,7 @@ class UserController extends BaseController
 
         // $userModel = new UserModel();
         $this->userModel->saveUser([
+
             'nama' => $this->request->getVar('nama'),
             'id_kelas' => $this->request->getVar('kelas'),
             'npm' => $this->request->getVar('npm'),
