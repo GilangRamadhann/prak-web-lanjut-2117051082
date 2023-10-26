@@ -1,31 +1,34 @@
 <?php
+
 use App\Controllers\Home;
-use CodeIgniter\Router\RouteCollection;
+use App\Controllers\KelasController;
 use App\Controllers\UserController;
+
+use CodeIgniter\Router\RouteCollection;
 
 /**
  * @var RouteCollection $routes
  */
 $routes->get('/', 'Home::index');
-upload-file
-// $routes->get('user/profile/(:any)/(:any)/(:any)/(:any)/(:any)/', 'UserController::class::profile');
 
-#form
-$routes->get('/user', 'UserController::index');
-// $routes->get('/user/profile', 'UserController::profile');
+// $routes->get('/profile/(:any)/(:any)/(:any)', 'Home::profile/$1/$2/$3');
+// $routes->get('/user/profile/(:any)/(:any)/(:any)', [UserController::class, 'profile']);
+$routes->get('/user/profile', [UserController::class, 'profile']);
+$routes->get('/user/create', [UserController::class, 'create']);
+$routes->post('/user/store', [UserController::class, 'store']);
+$routes->get('/user', [UserController::class, 'index']);
+$routes->get('user/(:any)/edit', [UserController::class, 'edit']);
+$routes->put('user/(:any)', [UserController::class, 'update']);
+$routes->delete('user/(:any)', [UserController::class, 'destroy']);
+$routes->get('user/(:any)', [UserController::class, 'show']);
 
-$routes->get('/user/profile', 'UserController::profile');
 
-$routes->get('/user/create', 'UserController::create');
-$routes->post('/user/store', 'UserController::store');
-$routes->get('/user/create', 'UserController::create');
+$routes->delete('kelas/(:any)', [KelasController::class, 'destroy']);
 
-$routes->get('/user/(:any)/edit', 'UserController::edit/$1');
-$routes->put('/user/(:any)', 'UserController::update/$1');
-$routes->delete('/user/(:any)', 'UserController::destroy/$1');
+$routes->get('/kelas/create', [KelasController::class, 'create']);
+$routes->post('/kelas/store', [KelasController::class, 'store']);
+$routes->get('/kelas', [KelasController::class, 'index']);
+$routes->get('kelas/(:any)/edit', [KelasController::class, 'edit']);
+$routes->put('kelas/(:any)', [KelasController::class, 'update']);
 
-$routes->get('/user/profile/(:any)', 'UserController::show/$1');
-
-// $routes->get('/user/profile', [UserController::class, 'profile']);
-// $routes->get('/user/create', [UserController::class, 'create']);
-// $routes->post('/user/store', [UserController::class, 'store']);
+$routes->get('kelas/(:any)', [KelasController::class, 'show']);

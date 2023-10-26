@@ -11,7 +11,7 @@ read-data
 read-data
 </head> -->
 <!-- <body> -->
-    <?= $this->extend('layouts/app')?>
+<?= $this->extend('layouts/app')?>
     <?= $this->section('content')?>
 
     <form method="POST" action="<?= base_url('/user/store') ?>" enctype="multipart/form-data">
