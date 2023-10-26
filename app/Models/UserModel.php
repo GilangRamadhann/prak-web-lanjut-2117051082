@@ -62,3 +62,4 @@ class UserModel extends Model
         return $this->delete($id);
     }
 }
+
