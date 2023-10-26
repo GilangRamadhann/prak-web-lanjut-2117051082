@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use CodeIgniter\Model;
+use Exception;
+use mysqli_sql_exception;
 
 class KelasModel extends Model
 {
@@ -13,7 +15,7 @@ class KelasModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nama_kelas'];
+    protected $allowedFields    = ['nama_kelas', 'kapasitas'];
 
     // Dates
     protected $useTimestamps = true;
@@ -39,7 +41,39 @@ class KelasModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    public function getKelas() {
+    public function saveKelas($data)
+    {
+        $this->insert($data);
+    }
+    public function getKelas($id = null)
+    {
+        if ($id != null) {
+            return $this->select('kelas.*')
+                ->find($id);
+        }
         return $this->findAll();
+    }
+    public function getAnggotaKelas($id = null)
+    {
+        return $this->select('kelas.*, user.nama')
+            ->join('user', 'user.id_kelas = kelas.id')
+            ->where('kelas.id', $id)
+            ->findAll();
+    }
+    public function updateKelas($data, $id)
+    {
+        return $this->update($id, $data);
+    }
+    public function deleteKelas($id)
+    {
+        try {
+            return $this->delete($id);
+        } catch (mysqli_sql_exception $e) {
+            if (str_starts_with($e->getMessage(), "Data too long for column")) {
+                // handle the error
+            } else {
+                throw $e;
+            }
+        }
     }
 }
