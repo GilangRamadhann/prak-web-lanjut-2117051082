@@ -2,12 +2,15 @@
 <?= $this->extend('layouts/app')?>
 <?= $this->section('content')?>
     <!-- Ini halaman list user -->
-
-<a href="<?= base_url('user/create')?>" class="btn btn-primary">Tambah data</a>    
-    <div class="container">
+ 
+<div class="container">
     <div class="row">
     <h3 class="mt-5">Tabel List User :</h3>
-    <table class="table table-dark">
+
+    <div class="col-3">
+      <a href="<?= base_url('user/create')?>" class="btn btn-primary">Tambah data</a>
+    </div>
+    <table class="table table-dark mt-2">
         <thead>
             <tr>
                 <th>ID</th>

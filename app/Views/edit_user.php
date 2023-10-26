@@ -52,7 +52,10 @@
             <td><input type="file" name="foto"></td>
         </tr>
         <tr>
-             <td><input type="submit" value="Simpan"></td>
+          <td>
+          <button class="btn btn-primary w-100 py-2 mt-3" type="submit">Simpan</button>
+          </td>
          </tr>
      </form>
      <?=$this->endSection()?>
+    </table>
