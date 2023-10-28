@@ -44,7 +44,6 @@ class UserController extends BaseController{
 
     public function show($id){
         $user = $this->userModel->getUser($id);
-
         $data = [
             'title' => 'Profile',
             'user' => $user,
