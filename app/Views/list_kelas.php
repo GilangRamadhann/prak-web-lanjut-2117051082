@@ -28,13 +28,15 @@
                     <td><?= $kelas['kapasitas'] ?></td>
 
                     <td>
-                        <a class="btn btn-primary" href="<?= base_url('kelas/' . $kelas['id']) ?>"><i class="fas fa-eye text-dark me-2" aria-hidden="true"></i>Detail</a>
-                        <a class="btn btn-warning" href="<?= base_url('kelas/' . $kelas['id'] . '/edit') ?>"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+                      <div class="wrap d-flex justify-content-start align-items-center">
+                        <a class="btn btn-primary me-2" href="<?= base_url('kelas/' . $kelas['id']) ?>"><i class="fas fa-eye text-dark me-2" aria-hidden="true"></i>Detail</a>
+                        <a class="btn btn-warning me-2" href="<?= base_url('kelas/' . $kelas['id'] . '/edit') ?>"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
                         <form action="<?=base_url('kelas/' . $kelas['id'])?>" method="POST">
                             <input type="hidden" name="_method" value="DELETE">
                             <?= csrf_field() ?>
                             <input type="submit" class="btn btn-danger" value="Delete" style="width: 80px; height: 40px;">
                         </form>
+                      </div>
                     </td>
                 </tr>
             <?php

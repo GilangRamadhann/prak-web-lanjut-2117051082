@@ -8,7 +8,6 @@
 
     <div class="d-flex justify-content-center align-items-center flex-column" style="height:100vh;width:100%;">
     <div class="rounded" style="padding: 20px; border:5px solid green;">
-      <!-- <h2>Form Biodata Diri</h2> -->
          <table>
          <tr>
              <td>Nama</td>
@@ -48,7 +47,7 @@
         <tr>
             <td>Foto</td>
             <td>:</td>
-            <img src="<?= $user['foto'] ?? '<default-foto>' ?>">
+            <center><img src="<?= $user['foto'] ?? '<default-foto>' ?>" width="200px"></center>
             <td><input type="file" name="foto"></td>
         </tr>
         <tr>

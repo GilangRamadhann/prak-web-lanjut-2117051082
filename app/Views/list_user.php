@@ -31,13 +31,15 @@
                     <td><?= $user['nama_kelas'] ?></td>
 
                     <td>
-                        <a href="<?= base_url('user/profile/' . $user['id']) ?>" class="btn btn-primary">Detail</a>
-                        <a href="<?= base_url('user/' . $user['id'] . '/edit') ?>" class="btn btn-warning">Edit</a>
-                        <form action="<?=base_url('user/' . $user['id'])?>" method="POST">
-                            <input type="hidden" name="_method" value="DELETE">
-                            <?= csrf_field() ?>
-                            <input type="submit" class="btn btn-danger" value="Delete" style="width: 80px; height: 40px;">
-                        </form>
+                        <div class="wrap d-flex justify-content-start align-items-center">
+                            <a href="<?= base_url('user/' . $user['id']) ?>" class="btn btn-primary me-2">Detail</a>
+                            <a href="<?= base_url('user/' . $user['id'] . '/edit') ?>" class="btn btn-warning me-2">Edit</a>
+                            <form action="<?=base_url('user/' . $user['id'])?>" method="POST">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <?= csrf_field() ?>
+                                <input type="submit" class="btn btn-danger" value="Delete" style="width: 80px; height: 40px;">
+                            </form>
+                        </div>
                     </td>
                 </tr>
             <?php
