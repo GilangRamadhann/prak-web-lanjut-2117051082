@@ -77,3 +77,4 @@ class KelasModel extends Model
         }
     }
 }
+

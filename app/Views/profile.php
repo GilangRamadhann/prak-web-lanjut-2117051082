@@ -22,6 +22,7 @@
     <P>Alamat : Labuhan Ratu</P>-->
 
 <div class="d-flex justify-content-center align-items-center flex-column" style="height:100vh;width:100%;">
+
   <div class="border border-3 rounded" style="padding: 20px;">
       <h2><center>Biodata Diri</center></h2>
 <img src="<?= $user['foto']?>" class="rounded-circle mx-auto d-block py-3" alt="Generic placeholder image" width="160" height="190">
@@ -29,16 +30,21 @@
     <tr>
       <td>
         <button class="btn btn-danger" type="button" style="width: 320px"><?= $user['nama']?></button>
+
       </td>
     </tr>
     <tr>
       <td>
+
         <button type="button" class="btn btn-danger" style="width: 320px"><?= $user['npm'] ?></button>
+
       </td>
     </tr>
     <tr>
       <td>
+
       <button type="button" class="btn btn-danger" style="width: 320px"><?= $user['nama_kelas'] ?></button>
+
       </td>
     </tr>
   </table>
